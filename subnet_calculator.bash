@@ -36,7 +36,7 @@ borrowed_bits="$((len-cidr))"
 
 # variable storing the bits borrowed from the host portion
 
-echo "The CIDR entered borrows ${borrowed_bits} bits"
+echo "The CIDR entered borrows ${borrowed_bits} bits from the host portion"
 case "$string" in
     "1") echo "Class A IP address" ;;
      "2") echo "Class B IP address" ;;
