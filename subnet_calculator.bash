@@ -5,25 +5,27 @@ octet1=$(echo $ip | cut -d "." -f1)
 #echo "${octet1}"
 if [ $octet1 -gt 0 ] && [ $octet1 -le 126 ]
 then 
-    def_mask=8 
-
-#def_mask is a variable storing the default classful subnet mask, based on the IP class
+    def_mask=8        #Class A default subnet mask is a /8
     
-#echo "${def_mask}" #optional echo statemenr for debugging purposes
+
+#def_mask is a variable storing the default classful subnet mask length for the specific IP class
+    
+#echo "${def_mask}" #optional echo statement for debugging purposes
     
 elif [ $octet1 -ge 128 ] && [ $octet1 -le 191 ]
 then
-     def_mask=16
+     def_mask=16      #Class B default subnet mask is a /16
 
 elif [ $octet1 -ge 192 ] && [ $octet1 -le 223 ]
 then
-     def_mask=24
+     def_mask=24 #Class C default subnet mask is a /24
 else
-     echo "Reserved IP address"
+     echo "Reserved IP address" #We don't use classes D and E, so we break here.
+     
      exit 1;
 fi
  
-echo -n "Enter CIDR: " #enter classless subnet mask in / notation
+echo -n "Enter CIDR: " #enter classless subnet mask length (/ notation)
 
 read cidr
 
@@ -31,21 +33,22 @@ len=32 # an IPv4 address is 32-bit long
 
 borrowed_bits=$((cidr-def_mask)) 
 
-#the difference between the classless subnet mask and the 
-#default classful subnet mask returns the number of bits borrowed from the host portion
+#The difference between the classless subnet mask and the default classful subnet
+# mask returns the number of bits borrowed from the host portion
 
 echo "The CIDR entered borrows ${borrowed_bits} bits"
 
-hostexp=$((len-cidr)) #exponent needed to calculate the number of hosts (y)
+hostexp=$((len-cidr)) #exponent (indicated as y) needed to calculate the number of hosts 
 
-# the formula for calculating hte number of hosts is (2^y)-2, where
+# The formula for calculating hte number of hosts is (2^y)-2, where
 # y is the number of zeros in the subnet mask (=32-number of ones).
 
 correction=2 
-#The formula for calculating the hosts number subtracts 2 because the network ID and the broadcast are to 
-#be excluded, in that they can't be assigned to hosts (they're not routable)
 
-echo "the host exponent is ${hostexp}"
+#The formula for calculating the hosts number subtracts 2 because the network ID and the broadcast are to 
+#be excluded, in that they can't be assigned to hosts (they're not routable).
+
+echo "The host exponent is ${hostexp}"
 
 networks=$((2**borrowed_bits))
 
