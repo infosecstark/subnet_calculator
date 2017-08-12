@@ -5,7 +5,7 @@ octet1=$(echo $ip | cut -d "." -f1)
 #echo "${octet1}"
 if [ $octet1 -gt 0 ] && [ $octet1 -le 126 ]
 then 
-    def_mask=8        #Class A default subnet mask is a /8
+    def_mask=8        #Class A default subnet mask length is 8
     
 
 #def_mask is a variable storing the default classful subnet mask length for the specific IP class
@@ -14,11 +14,11 @@ then
     
 elif [ $octet1 -ge 128 ] && [ $octet1 -le 191 ]
 then
-     def_mask=16      #Class B default subnet mask is a /16
+     def_mask=16      #Class B default subnet mask length is 16
 
 elif [ $octet1 -ge 192 ] && [ $octet1 -le 223 ]
 then
-     def_mask=24 #Class C default subnet mask is a /24
+     def_mask=24 #Class C default subnet mask length is 24
 else
      echo "Reserved IP address" #We don't use classes D and E, so we break here.
      
