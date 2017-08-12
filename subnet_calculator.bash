@@ -29,7 +29,7 @@ echo -n "Enter CIDR: " #Enter classless subnet mask length (/ notation)
 
 read cidr
 
-len=32 # an IPv4 address is 32-bit long
+len=32  # An IPv4 address is 32-bit long
 
 borrowed_bits=$((cidr-def_mask)) 
 
