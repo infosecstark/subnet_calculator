@@ -25,7 +25,7 @@ else
      exit 1;
 fi
  
-echo -n "Enter CIDR: " #enter classless subnet mask length (/ notation)
+echo -n "Enter CIDR: " #Enter classless subnet mask length (/ notation)
 
 read cidr
 
@@ -40,7 +40,7 @@ echo "The CIDR entered borrows ${borrowed_bits} bits"
 
 hostexp=$((len-cidr)) #exponent (indicated as y) needed to calculate the number of hosts 
 
-# The formula for calculating hte number of hosts is (2^y)-2, where
+# The formula for calculating the number of hosts is (2^y)-2, where
 # y is the number of zeros in the subnet mask (=32-number of ones).
 
 correction=2 
