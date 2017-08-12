@@ -33,8 +33,8 @@ len=32 # an IPv4 address is 32-bit long
 
 borrowed_bits=$((cidr-def_mask)) 
 
-#The difference between the classless subnet mask and the default classful subnet
-# mask returns the number of bits borrowed from the host portion
+#The difference between the classless subnet mask length and the default classful subnet
+#mask length returns the number of bits borrowed from the host portion
 
 echo "The CIDR entered borrows ${borrowed_bits} bits"
 
