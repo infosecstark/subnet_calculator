@@ -38,7 +38,7 @@ borrowed_bits=$((cidr-def_mask))
 
 echo "The CIDR entered borrows ${borrowed_bits} bits"
 
-hostexp=$((len-cidr)) #exponent (indicated as y) needed to calculate the number of hosts 
+hostexp=$((len-cidr)) #Exponent (indicated as y) needed to calculate the number of hosts 
 
 # The formula for calculating the number of hosts is (2^y)-2, where
 # y is the number of zeros in the subnet mask (=32-CIDR, where CIDR indicates the number of ones).
