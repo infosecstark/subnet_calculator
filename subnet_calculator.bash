@@ -10,7 +10,7 @@ then
 
 #def_mask is a variable storing the default classful subnet mask length for the specific IP class
     
-#echo "${def_mask}" #optional echo statement for debugging purposes
+#echo "${def_mask}" # Optional echo statement for debugging purposes
     
 elif [ $octet1 -ge 128 ] && [ $octet1 -le 191 ]
 then
