@@ -1,6 +1,7 @@
 #!/bin/bash
 # Bash script created by Mattia Campagnano on Mon Aug 14 13:05:21 EDT 2017
-# Returns the number of networks and host obtainable from a given IP address.
+# Returns the number of networks and hosts obtainable from a given IP address.
+
 echo -n "Enter IP address: "
 read ip
 octet1=$(echo $ip | cut -d "." -f1)
