@@ -28,7 +28,7 @@ else
      exit 1;
 fi
  
-echo -n "Enter CIDR: " #Enter classless subnet mask length 
+echo -n "Enter CIDR: " #Enter classless subnet mask length (e.g.: 28)
 
 read cidr
 
