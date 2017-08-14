@@ -53,7 +53,7 @@ correction=2
 
 networks=$((2**borrowed_bits))
 # The formula for calculating the number of hosts is (2^x)-2, where
-# "x" is the number of borrowed bits calculated as shown above.
+# "x" is the number of borrowed bits, calculated as shown above.
 
 temphosts=$((2**hostexp))
 
