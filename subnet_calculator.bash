@@ -55,7 +55,7 @@ correction=2
 # echo "The host exponent is ${hostexp}" # Optional echo statement for debugging purposes.
 
 networks=$((2**borrowed_bits))
-# The formula for calculating the number of hosts is (2^x)-2, where
+# The formula for calculating the number of neteorks is (2^x)-2, where
 # "x" is the number of borrowed bits, calculated as shown above.
 
 temphosts=$((2**hostexp))
