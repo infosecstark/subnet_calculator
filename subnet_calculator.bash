@@ -48,7 +48,7 @@ correction=2
 #The formula for calculating the hosts number subtracts 2 because the network ID and the broadcast are to 
 #be excluded, in that they can't be assigned to hosts (they're not routable).
 
-echo "The host exponent is ${hostexp}"
+# echo "The host exponent is ${hostexp}" # Optional echo statement for debugging purposes.
 
 networks=$((2**borrowed_bits))
 
